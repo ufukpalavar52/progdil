@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <conio.h>
-
 #include  <stdlib.h>
 
 #define MAX 100
@@ -9,8 +8,7 @@ void ReplaceUnderscoreWithSpace( char []);
 
 int main()
 {
-    
-	char kelime[MAX];
+    	char kelime[MAX];
 	int i;
 	printf("Giris yapiniz: ");
 	
@@ -35,7 +33,6 @@ int main()
 void ReplaceUnderscoreWithSpace( char  kelime[] )
 {
 	int uzunluk , i;
-	
 	uzunluk =  strlen(kelime);
    
 	for ( i=0 ; i<uzunluk ; i++)
@@ -45,10 +42,6 @@ void ReplaceUnderscoreWithSpace( char  kelime[] )
 			kelime[i] = ' ';
 
 		}
-    printf("%c",kelime[i]);   
-	
-	
+		printf("%c",kelime[i]);   
 	}
-
-
 }
