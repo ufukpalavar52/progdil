@@ -5,17 +5,17 @@
 
 void replace_usws (char []);
 
-int main() {
+int main() 
+{
 
     char word[MAX];
-    int needle;
+    
     printf ("\n\x1B[1;44;37mMetin: ");
     
-    needle = 0;
     gets(word);
     
     replace_usws (word);
-	printf("\n%s", word);
+    printf("\n%s", word);
 
 	getchar();
 	getchar();
@@ -41,6 +41,5 @@ void replace_usws (char  word[])
 		if (word[j] == ' ' && ( word[j+1] == '_' || word[j-1] == '_' )) {
 			word[j] = '_';
 		 }
-
-	//printf ("\x1B[0m\n\n");
+		 //printf ("\x1B[0m\n\n");
 }
