@@ -4,53 +4,50 @@
 
 #define MAX 100
 
-void ReplaceUnderscoreWithSpace (char []);
+void replace_usws (char []);
 
 int main() {
 
-    char kelime[MAX];
-	int i;
-	printf("\n\x1B[1;44;37mMetin: ");
+    char word[MAX];
+	int needle;
+	printf ("\n\x1B[1;44;37mMetin: ");
 	
-	i=0;
+	needle = 0;
 	while (1) {
 
-		scanf ("%c",&kelime[i]);
-       	if (kelime[i] == '\n') {
+		scanf ("%c", &word[needle]);
+       	if (word[needle] == '\n') {
 
-		   kelime[i] = '\0';
+		   word[needle] = '\0';
 		   break;
 
 		}
 
-		i++;
+		needle++;
 
 	}
 
-	printf("\n");
-
-	ReplaceUnderscoreWithSpace (kelime);
-
-	getch();
+	replace_usws (word);
 	return 0;
 
 }
 
-void ReplaceUnderscoreWithSpace (char  kelime[]) {
+void replace_usws (char  word[]) {
 
-	int uzunluk, i;
-	uzunluk = strlen (kelime);
-   
-	for (i=0 ; i < uzunluk ; i++) {
+	int length, needle;
+	length = strlen (word);
+   	printf ("\n");
+   	
+	for (needle = 0; needle < length; needle++) {
 
-		if (kelime[i] == '_' && (i > 0 && i < uzunluk - 1 ) ) {
+		if (word[needle] == '_' && (needle > 0 && needle < length - 1 )) {
 
-			kelime[i] = ' ';
+			word[needle] = ' ';
 
 		}
 
-		printf ("%c", kelime[i]);   
+		printf ("\x1B[1;42;37m%c", word[needle]);   
 	}
 
-	printf("\x1B[0m\n\n");
+	printf ("\x1B[0m\n\n");
 }
