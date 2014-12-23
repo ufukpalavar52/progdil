@@ -337,7 +337,7 @@ int random_name_producer(int number, char project_name[], char names[][MAX], cha
 			if (control == 1 && filecontrol == 1)
 			{
 			   strcat(string_list[i],str);
-			   printf("\n%d. %s",i+1,str);
+			   Print_screen(i);
 			   fprintf(Project_Name,"\n%s",str);
 			   create_folder(str,z);
 			   i++;
