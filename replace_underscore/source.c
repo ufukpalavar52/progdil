@@ -10,7 +10,7 @@ int main () {
   printf ("\n\x1B[1;44;37mMetin: ");
   scanf ("%[^\n]s", word);
   replace_usws (word);
-  return 0;
+  return ;
 
 }
 
