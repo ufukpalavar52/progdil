@@ -292,6 +292,23 @@ int checkWord(int number, char language[])
 	  ""
 	};
 	
+	if(strcmp(language,"tr") == 0) {
+
+       z = 0;
+	   strcat(project_name,"turkceProjeIsmi.txt");
+	   namelen = vocable_number(trNames);
+	   adjlen = vocable_number(trAdjectives);
+	   random_name_producer(number, project_name, trNames, trAdjectives, namelen, adjlen, z);
+
+	} else {
+
+		z = 1;
+	    strcat(project_name,"englishProjectName.txt");
+	    namelen = vocable_number(names);
+	    adjlen = vocable_number(adjectives);
+	    random_name_producer(number, project_name, names, adjectives, namelen, adjlen, z);
+	}
+	
 }
 
 int random_name_producer(int number, char project_name[], char names[][MAX], char adjectives[][MAX], int namelen, int adjlen,int z)
