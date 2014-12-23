@@ -143,6 +143,7 @@ int checkWord(int number, char language[])
 	  "Zealous",
 	  ""
 	};
+	
 	char trAdjectives[][MAX]=
 	{
 	  "Ak",
