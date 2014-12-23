@@ -347,6 +347,8 @@ int random_name_producer(int number, char project_name[], char names[][MAX], cha
 		fclose(Project_Name);
 	}
 }
+
+
 int string_control(char string[],char string_list_control[][MAX], int count)
 {
 	int i = 0, d = 1;
