@@ -347,4 +347,94 @@ int random_name_producer(int number, char project_name[], char names[][MAX], cha
 		fclose(Project_Name);
 	}
 }
+int string_control(char string[],char string_list_control[][MAX], int count)
+{
+	int i = 0, d = 1;
+	for ( ; i<=count;  )
+	{
+		if(strcmp(string_list_control[i], string) != 0 )
+			d = 1;
+		else {
+			d = 0;
+			break;
+		}
+		i++;
+	}
+	return d;
+}
+
+int file_control( char string[] ,char project_name[] )
+{
+
+	char file_string_list[MAX];
+        int d;
+
+	FILE* project_name_read;
+
+	if ((project_name_read = fopen(project_name, "r")) == NULL)
+		printf("Dosya acilmadi");
+	else
+		while (!feof(project_name_read))
+		{
+		   fscanf(project_name_read, "%s", file_string_list);
+		   if( strcmp(file_string_list, string) != 0 )
+			  d = 1;
+		   else {
+			  d = 0;
+			  break;
+		   }
+		}
+	
+	
+	fclose(project_name_read);
+	return d;
+}
+
+
+int create_folder(char str[], int z)
+{
+	char s[MAX];
+
+	if (z == 0 ) {
+	    strcpy(s,"turkce-proje-ismi//");
+	    mkdir(s);
+	} else if (z == 1) {
+		strcpy(s,"english-project-name//");
+		mkdir(s);
+	}
+
+    
+	strcat(s, str);
+	mkdir(s);
+	
+}
+
+int Print_screen(int i)
+{
+	printf("\n%d. %s",i+1, string_list[i]);
+
+}
+
+int str_tolower(char str[] )
+{
+	int x = strlen(str), i;
+	for (i = 0; i < x; i++)
+	       str[i] = tolower(str[i]);
+}
+
+
+int vocable_number (char k[][MAX])
+{
+	int i = 0, t, d = 1;
+	
+	while( d != 0) {
+		if (strcmp("", k[i]) == 0)
+			d = 0;
+		else
+		        i++;	
+	}
+
+	return i;
+}
+
 
