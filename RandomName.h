@@ -294,7 +294,7 @@ int checkWord(int number, char language[])
 	
 	if(strcmp(language,"tr") == 0) {
 
-       z = 0;
+           z = 0;
 	   strcat(project_name,"turkceProjeIsmi.txt");
 	   namelen = vocable_number(trNames);
 	   adjlen = vocable_number(trAdjectives);
@@ -302,7 +302,7 @@ int checkWord(int number, char language[])
 
 	} else {
 
-		z = 1;
+	    z = 1;
 	    strcat(project_name,"englishProjectName.txt");
 	    namelen = vocable_number(names);
 	    adjlen = vocable_number(adjectives);
