@@ -52,7 +52,7 @@ int numberControl(char number[])
 		if(isdigit(number[i]) != 0)
 			d = 1;
 		else {
-		    d = 0;
+			d = 0;
 			break;
 		}
 	}
