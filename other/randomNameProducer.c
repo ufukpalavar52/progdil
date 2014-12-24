@@ -59,7 +59,7 @@ int numberControl(char number[])
 		    d = 1;
 		else {
 		    d = 0;
-		   break;
+		    break;
 		}
 	}
 
