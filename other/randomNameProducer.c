@@ -9,24 +9,30 @@ int main()
 	int t, i, numbercontrol, x;
 	char language[10], number[5];
 	
-	printf("Turkce rastgele isim icin : tr"
-		   "\nFor English random name : en"
-		   "\nSelect: ");
+        printf("Turkce rastgele isim icin : tr"
+	       "\nFor English random name : en"
+	       "\nSelect: ");
 
 again:
 
-	scanf("%s",language);
+	gets(language);
 	str_tolower(language);
+	
+	if(strcmp(language,"") == 0 ) {
+		
+		checkWord(1, "tr");
+		getchar();
+		return 0;
 
-	if(strcmp(language,"tr") != 0 && strcmp(language,"en") != 0 ) {
+	} else if(strcmp(language,"tr") != 0 && strcmp(language,"en") != 0 ) {
+		
 		printf("Boyle dil secenegi yoktur tekrar deneyin:");
 		goto again;
 	
-	}
+	} else
+		printf("Uretilecek isim adedi:");
 
-	printf("Uretilecek isim adedi:");
-
-numberAgain:
+tryAgain:
 
 	scanf("%s", number);
 	numbercontrol = numberControl(number);
@@ -36,7 +42,7 @@ numberAgain:
 		checkWord(x, language);
 	} else {
 		printf("Lutfen sayi giriniz: ");
-		goto numberAgain;
+		goto tryAgain;
 	}
 
 	getchar();
@@ -50,14 +56,12 @@ int numberControl(char number[])
 	len = strlen(number);
 	for(i = 0; i< len; i++){
 		if(isdigit(number[i]) != 0)
-			d = 1;
+		    d = 1;
 		else {
 		    d = 0;
-			break;
+		   break;
 		}
 	}
 
 	return d;
 }
-
-
